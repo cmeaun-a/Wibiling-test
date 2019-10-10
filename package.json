@@ -1,0 +1,42 @@
+{
+  "name": "node-test-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "client": "webpack -d --watch --env=development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wibidev/node-test-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wibidev/node-test-app/issues"
+  },
+  "homepage": "https://github.com/wibidev/node-test-app#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.3.1",
+    "express": "^4.16.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "0.21.0",
+    "webpack": "^4.29.2",
+    "webpack-cli": "^3.2.3"
+  }
+}
