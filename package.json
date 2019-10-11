@@ -4,9 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "dev:server": "yarn nodemon server/app.js",
+    "dev:client": "webpack-dev-server",
+    "start": "rm -rf lib/ && cp -R server/ lib/ && NODE_ENV=production babel -d lib server && NODE_ENV=production node lib/app.js",
     "client": "webpack -d --watch --env=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --runInBand"
   },
   "repository": {
     "type": "git",
@@ -19,10 +21,16 @@
   },
   "homepage": "https://github.com/wibidev/node-test-app#readme",
   "dependencies": {
+    "@babel/node": "^7.6.3",
     "@babel/runtime": "^7.3.1",
+    "@material-ui/core": "^4.5.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
     "express": "^4.16.4",
+    "morgan": "^1.9.1",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react-dom": "^16.8.1",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -30,13 +38,27 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.5",
     "css-loader": "^0.28.11",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "extract-text-webpack-plugin": "^4.0.0-alpha.0",
+    "jest": "^24.9.0",
     "node-sass": "^4.9.3",
+    "nodemon": "^1.19.3",
+    "prettier": "1.18.2",
     "sass-loader": "^7.1.0",
     "style-loader": "0.21.0",
+    "supertest": "^4.0.2",
+    "test": "^0.6.0",
     "webpack": "^4.29.2",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.8.2"
   }
 }
